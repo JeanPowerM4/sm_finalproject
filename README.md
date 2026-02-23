@@ -107,43 +107,4 @@ Tablas agregadas listas para consumo en Power BI:
 | `kpi_semanal` | Semana × Condición | Media, min, max, std de todos los KPIs |
 | `kpi_diario` | Día × Condición | Promedios diarios + energía generada (MWh) |
 
----
-
-## 📁 Estructura del Repositorio
-
-```
-📦 thermal-plant-etl/
-│
-├── 📂 datasets/                    # Archivos fuente del historiador
-│   └── BD_EXAQUAUNTUM.csv
-│
-├── 📂 PrepAmb/                     # Preparación del ambiente Unity Catalog
-│   └── Preparacion_Ambiente.ipynb
-│
-├── 📂 proceso/                     # Notebooks del ETL
-│   ├── 01_bronze_ingesta.ipynb     # RAW → Bronze
-│   ├── 02_silver_transform.ipynb   # Bronze → Silver (KPIs)
-│   └── 03_golden_kpis.ipynb        # Silver → Golden (agregaciones)
-│
-├── 📂 reversion/                   # Scripts de rollback
-│   └── drop_catalog.py
-│
-├── 📂 seguridad/                   # GRANTs sobre tablas Golden
-│   └── grants.sql
-│
-├── 📂 dashboard/                   # Dashboard Power BI
-│   ├── performance_monitoring.pbix
-│   └── preview.png
-│
-├── 📂 evidencias/                  # Capturas de ejecución
-│   └── workflow_success.png
-│
-├── 📂 certificaciones/             # Certificados Azure
-│   └── cert.png
-│
-├── 📂 .github/
-│   └── 📂 workflows/
-│       └── deploy.yml              # CI/CD dev → prod
-│
-└── 📄 README.md
 ```
